@@ -24,32 +24,61 @@ validateEmail(email){
     return re.test(email);
 }
 
-handleSubmit(){
-  if (!validateEmail(this.state.emailEntry)){
-    this.setState({emailError: 'Email is invalid. Please enter a valid email address'})
-  } else if (!this.state.emailEntry){
+handleEmail(){
+  if (!this.state.emailEntry){
     this.setState({emailError: 'Email cannot be blank. Please enter a valid email address'})
+  } else if (!this.validateEmail(this.state.emailEntry)){
+    this.setState({emailError: 'Email is invalid. Please enter a valid email'})
   }
-  // alert('submitted');
-  // console.log('submitted')
 }
 
+handlePassword(){
+  if (!this.state.passwordEntry){
+    this.setState({passwordError: 'Password cannot be blank. Please enter password'})
+  }
+}
+
+handleSubmit(){
+  this.setState({emailError: ''});
+  this.setState({passwordError: ''});
+  this.handleEmail();
+  this.handlePassword();
+}
+
+handleChange(event) {
+  event.preventDefault();
+  this.setState({value: event.nativeEvent.text});
+  alert('handlechange')
+}
+
+updatePassword(event){
+  event.preventDefault();
+this.setState({passwordEntry: event.nativeEvent.text})
+}
+
+updateEmail(event){
+  event.preventDefault();
+this.setState({emailEntry: event.nativeEvent.text})
+}
 
   render(){
     return(
       <View style={Styles.container}>
         <Text style={Styles.title}>Login</Text>
-        <View>
-          <Text>{this.state.emailError}</Text>
+        <View style={{alignContent: 'center'}}>
+          <Text style={Styles.warning}>{this.state.emailError}</Text>
           <TextInput
           style={Styles.textInput}
           placeholder="enter email address"
+          keyboardType="email-address"
+          onChange={this.updateEmail.bind(this)}
           />
-          <Text>{this.state.passwordError}</Text>
+          <Text style={Styles.warning}>{this.state.passwordError}</Text>
           <TextInput
           style={Styles.textInput}
           placeholder="enter password"
           secureTextEntry={true}
+          onChange={this.updatePassword.bind(this)}
           />
         </View>
         <TouchableOpacity
