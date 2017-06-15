@@ -10,7 +10,8 @@ export default StyleSheet.create({
     borderWidth: 0.5,
     borderColor: '#d6d7da',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    flex: 1
   },
   title: {
     fontSize: 19,
@@ -18,9 +19,27 @@ export default StyleSheet.create({
     color: 'tomato',
     textAlign: 'center'
   },
-  activeTitle: {
-    color: 'pink',
+  textInput: {
+    height: 50,
+    borderColor: 'navy',
+    borderWidth: 2,
+    width: 300,
+    padding: 5
   },
+  warning: {
+    color: 'maroon',
+    fontWeight: 'bold'
+  },
+  submit: {
+    height: 50,
+    width: 100,
+    borderRadius: 15,
+    borderWidth: 1,
+    borderColor: 'navy',
+    backgroundColor: 'aqua',
+    justifyContent: 'center',
+    marginTop: 10
+  }
 });
 
 

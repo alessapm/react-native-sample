@@ -12,11 +12,11 @@ export default class Index extends React.Component {
 
   render(){
     return(
-      <View>
+      <View style={Styles.container}>
         <Text style={Styles.title}>Hello</Text>
         <Button
-        title="click me to sign up"
-        onPress={() => this.props.navigation.navigate('Signup')}
+        title="click here to log in"
+        onPress={() => this.props.navigation.navigate('Login')}
         />
       </View>
     )

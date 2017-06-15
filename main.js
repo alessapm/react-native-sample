@@ -3,7 +3,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import Index from './Components/index.js';
-import Signup from './Components/signup.js';
+import Login from './Components/login.js';
 import Styles from './Components/Styles.js';
 
 class App extends React.Component {
@@ -16,7 +16,7 @@ class App extends React.Component {
 
 const ModalStack = StackNavigator({
   Index: { screen: Index },
-  Signup: { screen: Signup },
+  Login: { screen: Login },
 });
 
 const styles = StyleSheet.create({
