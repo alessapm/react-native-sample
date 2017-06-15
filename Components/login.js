@@ -29,12 +29,21 @@ handleEmail(){
     this.setState({emailError: 'Email cannot be blank. Please enter a valid email address'})
   } else if (!this.validateEmail(this.state.emailEntry)){
     this.setState({emailError: 'Email is invalid. Please enter a valid email'})
+  } else {
+    this.checkValid();
   }
 }
 
 handlePassword(){
   if (!this.state.passwordEntry){
     this.setState({passwordError: 'Password cannot be blank. Please enter password'})
+  }
+}
+
+checkValid(){
+  console.log('in check valid');
+  if (!this.state.emailError && !this.state.passwordError){
+    this.props.navigation.navigate('Dashboard');
   }
 }
 
@@ -53,12 +62,12 @@ handleChange(event) {
 
 updatePassword(event){
   event.preventDefault();
-this.setState({passwordEntry: event.nativeEvent.text})
+  this.setState({passwordEntry: event.nativeEvent.text})
 }
 
 updateEmail(event){
   event.preventDefault();
-this.setState({emailEntry: event.nativeEvent.text})
+  this.setState({emailEntry: event.nativeEvent.text})
 }
 
   render(){
