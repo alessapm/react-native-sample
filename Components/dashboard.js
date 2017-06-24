@@ -12,6 +12,7 @@ export default class Dashboard extends React.Component {
   render(){
     return(
       <View style={Styles.mainContainer}>
+
         <TouchableOpacity style={Styles.section}>
           <Text style={Styles.textInside}>Hello</Text>
         </TouchableOpacity>
