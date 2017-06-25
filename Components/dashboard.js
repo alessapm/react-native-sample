@@ -19,6 +19,9 @@ export default class Dashboard extends React.Component {
         <TouchableOpacity style={Styles.section}>
           <Text style={Styles.textInside}>Hello</Text>
         </TouchableOpacity>
+        <TouchableOpacity style={Styles.section}>
+          <Text style={Styles.textInside}>Hello</Text>
+        </TouchableOpacity>
         <View style={{flexDirection: 'row', flex: 1}}>
           <TouchableOpacity style={Styles.section}>
             <Text style={Styles.textInside}>Hello</Text>
